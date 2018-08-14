@@ -14,49 +14,35 @@
     <div class="container">
         <div class="row center-align">
             <div class="card-panel">
-                <h3 class="right-align">0</h1>
+                <h3 id="screen" class="right-align">0</h1>
             </div>
         </div>
         <div class="row center-align">
             <div class="col s3">
-                <a class="btn-floating btn-large waves-effect waves-light deep-purple">AC</a>
+                <a class="btn-floating btn-large waves-effect waves-light deep-purple" onclick="return enterNumber(7)">7</a>
             </div>
             <div class="col s3">
-                <a class="btn-floating btn-large waves-effect waves-light deep-purple">CE</a>
+                <a class="btn-floating btn-large waves-effect waves-light deep-purple" onclick="return enterNumber(8)">8</a>
             </div>
             <div class="col s3">
-                <a class="btn-floating btn-large waves-effect waves-light deep-purple">+/-</a>
+                <a class="btn-floating btn-large waves-effect waves-light deep-purple" onclick="return enterNumber(9)">9</a>
             </div>
             <div class="col s3">
-                <a class="btn-floating btn-large waves-effect waves-light deep-purple">%</a>
-            </div>
-        </div>
-        <div class="row center-align">
-            <div class="col s3">
-                <a class="btn-floating btn-large waves-effect waves-light deep-purple">7</a>
-            </div>
-            <div class="col s3">
-                <a class="btn-floating btn-large waves-effect waves-light deep-purple">8</a>
-            </div>
-            <div class="col s3">
-                <a class="btn-floating btn-large waves-effect waves-light deep-purple">9</a>
-            </div>
-            <div class="col s3">
-                <a class="btn-floating btn-large waves-effect waves-light deep-purple">/</a>
+                <a class="btn-floating btn-large waves-effect waves-light deep-purple" onclick="return enterOperation('divide')">/</a>
             </div>
         </div>
         <div class="row center-align">
             <div class="col s3">
-                <a class="btn-floating btn-large waves-effect waves-light deep-purple">4</a>
+                <a class="btn-floating btn-large waves-effect waves-light deep-purple" onclick="return enterNumber(4)">4</a>
             </div>
             <div class="col s3">
-                <a class="btn-floating btn-large waves-effect waves-light deep-purple">5</a>
+                <a class="btn-floating btn-large waves-effect waves-light deep-purple" onclick="return enterNumber(5)">5</a>
             </div>
             <div class="col s3">
-                <a class="btn-floating btn-large waves-effect waves-light deep-purple">6</a>
+                <a class="btn-floating btn-large waves-effect waves-light deep-purple" onclick="return enterNumber(6)">6</a>
             </div>
             <div class="col s3">
-                <a class="btn-floating btn-large waves-effect waves-light deep-purple">
+                <a class="btn-floating btn-large waves-effect waves-light deep-purple" onclick="return enterOperation('multiply')">
                     <i class="material-icons">clear</i>
                 </a>
 
@@ -64,19 +50,19 @@
         </div>
         <div class="row center-align">
             <div class="col s3">
-                <a class="btn-floating btn-large waves-effect waves-light deep-purple">1</a>
+                <a class="btn-floating btn-large waves-effect waves-light deep-purple" onclick="return enterNumber(1)">1</a>
 
             </div>
             <div class="col s3">
-                <a class="btn-floating btn-large waves-effect waves-light deep-purple">2</a>
+                <a class="btn-floating btn-large waves-effect waves-light deep-purple" onclick="return enterNumber(2)">2</a>
 
             </div>
             <div class="col s3">
-                <a class="btn-floating btn-large waves-effect waves-light deep-purple">3</a>
+                <a class="btn-floating btn-large waves-effect waves-light deep-purple" onclick="return enterNumber(3)">3</a>
 
             </div>
             <div class="col s3">
-                <a class="btn-floating btn-large waves-effect waves-light deep-purple">
+                <a class="btn-floating btn-large waves-effect waves-light deep-purple" onclick="return enterOperation('subtract')">
                     <i class="material-icons">remove</i>
                 </a>
 
@@ -84,16 +70,16 @@
         </div>
         <div class="row center-align">
             <div class="col s3">
-                <a class="btn-floating btn-large waves-effect waves-light deep-purple">0</a>
+                <a class="btn-floating btn-large waves-effect waves-light deep-purple" onclick="return enterNumber(0)">0</a>
             </div>
             <div class="col s3">
-                <a class="btn-floating btn-large waves-effect waves-light deep-purple">.</a>
+                    <a class="btn-floating btn-large waves-effect waves-light darken-4 deep-purple" onclick="return clear()">AC</a>
             </div>
             <div class="col s3">
-                <a class="btn-floating btn-large waves-effect waves-light darken-4 deep-purple">enter</a>
+                <a class="btn-floating btn-large waves-effect waves-light darken-4 deep-purple" onclick="return submit()">enter</a>
             </div>
             <div class="col s3">
-                <a class="btn-floating btn-large waves-effect waves-light deep-purple">
+                <a class="btn-floating btn-large waves-effect waves-light deep-purple" onclick="return enterOperation('add')">
                     <i class="material-icons">add</i>
                 </a>
             </div>
