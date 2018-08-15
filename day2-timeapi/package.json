@@ -1,0 +1,16 @@
+{
+  "name": "timeapi",
+  "version": "1.0.0",
+  "description": "api that returns the time for a given timezone",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Huda Syed",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "moment": "^2.22.2",
+    "moment-timezone": "^0.5.21"
+  }
+}
