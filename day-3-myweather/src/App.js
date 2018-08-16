@@ -7,7 +7,8 @@ class App extends Component {
     super(props);
 
     this.state = {
-      temperature: null
+      temperature: null,
+      loading: true
     };
   }
 
@@ -27,7 +28,8 @@ class App extends Component {
         fetch(data.properties.forecast)
           .then(res => res.json())
           .then(d => this.setState({
-            temperature: d.properties.periods[0].temperature
+            temperature: d.properties.periods[0].temperature,
+            loading: false
           }));
       });
 
@@ -46,8 +48,8 @@ class App extends Component {
       <div className="App">
         <Helmet>
           <style>{'body {background-color: #3e939b;}'}</style>
-        </Helmet>
-        <p>Your temperature is{this.state.temperature}</p>
+        </Helmet>{ !this.state.loading && 
+        <p>Your temperature is {this.state.temperature}</p>}
       </div>
     );
   }
