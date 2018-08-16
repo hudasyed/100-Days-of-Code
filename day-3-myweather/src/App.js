@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
+import { Container, Statistic } from 'semantic-ui-react';
 import './App.css';
 
 class App extends Component {
@@ -19,7 +20,6 @@ class App extends Component {
   setTemperature() {
     navigator.geolocation.getCurrentPosition(
       (position) => {
-       console.log(position);
        const latitude = position.coords.latitude;
        const longitude = position.coords.longitude;
        fetch(`https://api.weather.gov/points/${latitude},${longitude}`)
@@ -32,24 +32,22 @@ class App extends Component {
             loading: false
           }));
       });
-
-       
-       this.setState({
-        latitude: position.coords.latitude,
-        longitude: position.coords.longitude
-      });
-      },
-      (error) => alert(error.message)
-    );
+    });
   }
 
   render() {
     return (
       <div className="App">
         <Helmet>
-          <style>{'body {background-color: #3e939b;}'}</style>
-        </Helmet>{ !this.state.loading && 
-        <p>Your temperature is {this.state.temperature}</p>}
+          <style>{'body {background-color: #80b9e5}'}</style>
+        </Helmet>
+        <Container>
+          { !this.state.loading && 
+          <Statistic>
+            <Statistic.Value>{this.state.temperature}</Statistic.Value>
+            <Statistic.Label>Degrees Fahrenheit</Statistic.Label>
+          </Statistic>}
+        </Container>        
       </div>
     );
   }
