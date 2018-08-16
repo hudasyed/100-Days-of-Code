@@ -3,13 +3,42 @@ import { Helmet } from 'react-helmet';
 import './App.css';
 
 class App extends Component {
-  location() {
-    return navigator.geolocation.getCurrentPosition(function success(position){
-      console.log(position);
-      return position;
-    }, function error() {
-      return null;
-    })
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      temperature: null
+    };
+  }
+
+  componentWillMount() {
+    this.setTemperature();
+  }
+
+  setTemperature() {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+       console.log(position);
+       const latitude = position.coords.latitude;
+       const longitude = position.coords.longitude;
+       fetch(`https://api.weather.gov/points/${latitude},${longitude}`)
+      .then(response => response.json())
+      .then(data => {
+        fetch(data.properties.forecast)
+          .then(res => res.json())
+          .then(d => this.setState({
+            temperature: d.properties.periods[0].temperature
+          }));
+      });
+
+       
+       this.setState({
+        latitude: position.coords.latitude,
+        longitude: position.coords.longitude
+      });
+      },
+      (error) => alert(error.message)
+    );
   }
 
   render() {
@@ -17,8 +46,8 @@ class App extends Component {
       <div className="App">
         <Helmet>
           <style>{'body {background-color: #3e939b;}'}</style>
-          <p>Your location is {this.location()}</p>
         </Helmet>
+        <p>Your temperature is{this.state.temperature}</p>
       </div>
     );
   }
